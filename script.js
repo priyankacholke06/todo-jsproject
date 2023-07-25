@@ -74,11 +74,11 @@ function createCard(){
     var first_card = document.querySelector('.card').cloneNode(true);
     display(first_card);
 };
-// function completedTask(value){
-//     document.getElementById(`${value}`).style.textDecoration = 'line-through';
-//     document.getElementById(`${value}`).style.color = '#112D4E';
-//     document.getElementById(`check-done-${value}`).remove();
-// }
+function completedTask(value){
+    document.getElementById(`${value}`).style.textDecoration = 'line-through';
+    document.getElementById(`${value}`).style.color = '#112D4E';
+    document.getElementById(`check-done-${value}`).remove();
+}
 function display(card){
     document.getElementById('empty-list').style.display = 'none'
     arr_of_obj.forEach(element => {
