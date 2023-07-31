@@ -4,7 +4,7 @@
 }
 body{
     background: rgb(131, 129, 129);
-    color: rgb(101, 99, 99);
+    color: rgb(59, 56, 56);
     font-weight: bold; 
 }
 #header{
@@ -26,6 +26,7 @@ body{
     cursor: pointer;
     color: black;
 }
+
 .color-red{
     color: red;
 }
@@ -58,7 +59,7 @@ body{
     border-radius: 250px;
     margin-top: 5%;
     color: white;
-    background-color: rgb(80, 177, 233);
+    background-color: rgb(243, 56, 56);
     font-size: 30px;
     width: 25%;
     height: 20%;
@@ -119,14 +120,74 @@ button{
     display: flex;
     font-size: 30px;
 }
-#empty-list{
-
-    position: relative;
-    top: 10vh;
-    margin-left: 10vw;
-    color: rgb(37, 215, 228);
-    font-size: 45px;
-    font-weight: 800;
+.add-button-in-card{
+    position: absolute;
+    bottom: 15px;
+    font-size: 25px;
+    margin-left: 15%;
+    right: 10px;
+    cursor: pointer;
+    color: rgb(55, 55, 169);
+    background-color: white;
+}
+.delete-button-in-card{
+    position: absolute;
+    right: 50px;
+    bottom: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    color: rgb(211, 49, 49);
+    background-color: white;
+}
+.in-list-button{
+    cursor: pointer;
+}
+#modal-div-card{
+    display: none;
+    position: fixed;
+    padding: 20% 0 0 30%;
+    text-align: center;
+    top: -10%;
+    z-index: 1;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
+}
+#modal-box-card{
+    border-radius: 7px;
+    width: 30vw;
+    height: 28vh;
+    border: 1px solid rgb(165, 46, 46);
+    padding: 10px 0 0 0px;
+    text-align: center;
+    color: black;
+    background-color: #fff;
+    animation: modalPop 0.2s ease-in 0s 1;
+}
+.this-list-element{
+    font-size: 20px;
+    font-weight: 700;
+    color: grey;
+    animation: cardTextAnimate 0.2s ease-in 0s 1;
+}
+#check-done{
+    color: black;
+    background-color: grey;
+    display: none;
+}
+.mark-as-done-class{
+    background-color: rgb(77, 77, 228);
+    color: white;
+    font-size: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 3px 4px 4px 4px;
+}
+#back-button{
+    margin-left: 10%;
+   font-size: 40px;
+   display: none;
 }
 #back-icon{
     z-index: 20;
@@ -141,6 +202,17 @@ button{
     color: red;
     display: none;
 }
+
+#empty-list{
+
+    position: relative;
+    top: 10vh;
+    margin-left: 10vw;
+    color: rgb(69, 206, 42);
+    font-size: 45px;
+    font-weight: 800;
+}
+
 @media screen and (min-width:290px) and (max-width:580px){
     #task{
         font-size: 30px;

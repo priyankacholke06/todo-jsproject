@@ -22,7 +22,8 @@ function addCard(){
 }
 function closeModal(){
     document.getElementById("modal-div").style.display = "none";
-}function createObj(title){
+}
+function createObj(title){
     document.getElementById('empty-list').style.display = 'none'
     var card_obj = {
         title: title,
@@ -70,6 +71,22 @@ function addSubtask(val) {
     document.getElementById("modal-div-card").style.display = "block";
     value_id = val;
 };
+function deleteCard(val){
+    var delete_div = document.getElementById(`${val}`);
+    for(obj of arr_of_obj){
+        for(prop in obj){
+        if (obj.id==val)
+        arr_of_obj.delete(obj);
+        break;
+        }
+    }
+    delete_div.parentNode.removeChild(delete_div);
+    if(arr_of_obj.size==0){
+        document.getElementById('empty-list').style.display = 'block';
+    }
+    
+};
+
 function createCard(){
     var first_card = document.querySelector('.card').cloneNode(true);
     display(first_card);
@@ -99,3 +116,59 @@ function display(card){
     card.style.display = "block";
     document.getElementById("outer-container").appendChild(card);
 }
+function headerFunc(val){
+    var card_header;
+    for(let ele of arr_of_obj){
+        for(let id in ele){
+            if(ele[id]==val){
+                card_header = ele.title;
+                break;
+            };
+        };
+    };
+    document.querySelector("#app-name").style.display = 'none';
+    document.querySelector("#add-button-text").style.display = 'none';
+    for(let ele of arr_of_obj){
+            if(ele.id==val){
+                document.getElementById(`${ele.id}`).style.display = 'block';
+            }
+            else {
+                document.getElementById(`${ele.id}`).style.display = 'none';
+            }
+    };
+    document.getElementById('card-dynamic-head').innerText = `${card_header}`;
+    document.getElementById('card-dynamic-head').style.display = 'flex'
+    document.getElementById('back-button').style.display = 'block'
+    title_flag = true;
+};
+function displayAll(){
+    title_flag = false;
+    document.querySelector("#app-name").style.display = 'block';
+    document.querySelector("#add-button-text").style.display = 'inline-block';
+    document.getElementById('back-button').style.display = 'none';
+    for(let ele of arr_of_obj){
+            document.getElementById(`${ele.id}`).style.display = 'block';
+    };
+    document.getElementById('card-dynamic-head').innerText = ``;
+    document.getElementById('card-dynamic-head').style.display = 'none';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
