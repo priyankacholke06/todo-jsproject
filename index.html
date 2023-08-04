@@ -1,48 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-</head>
-<body>
-    <div id="container">
-    <div id="container1">
-    <i id="backicon" class="fa-solid fa-circle-chevron-left" style="visibility: hidden;"></i>
-    <span id="backtext" style="visibility: hidden;">Back</span>
-    <h1 id="heading" style="visibility: hidden;"></h1>
-    <span id="tasks">Tasks</span>&nbsp;&nbsp;&nbsp;<span id="list">List</span>
-    </div>
-    <div id="container2">
-    <i id="createList" class="fa-sharp fa-solid fa-circle-plus"></i>
-    <span id="additem">Add Item</span>
-    </div>
-    </div>
-    <div id="noItems">
-        <span>ADD NEW LIST....</span>
-    </div>  
-    <div id="blur" style="visibility: hidden;"></div>
-    <div style="visibility: hidden;" id="listForm">
-        <h4>Add New List</h4>
-    <form>
-        <input type="text" id="listName"><br>
-        <button id="addList" type="button">Add</button>
-        <button id="closeList" type="button">Close</button>
-    </form>
-    </div>
-    <div id="lists">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Todo app</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="flex1">
+      <div class="head1">
+        <span class="white tasks">Tasks</span><span class="white1">&nbsp; List</span>
+      </div>
+      <div onclick="openFirstPage()" class="back">
+        <button class="arr">&lt;</button><span class="white1"> Back</span>
+      </div>
+      <div class="right">
+        <button onclick="addNewItem()" class="button1 buttonPosition">+</button><span class="white1 add1 special">&nbsp; Add Item</span>
+      </div>
+    </nav>
 
+    <div class="cardHeading"></div>
+    <div class="container1 white1 No">No items in the todo list</div>
+    <div class="justPop">
+      <div class="addlist">
+        <div class="popup1">
+          <div class="text1">Add New List</div>
+          <input
+            id="myInput"
+            type="text"
+            class="input1"
+            placeholder="Add New List"
+          />
+          <div class="bflex">
+            <button onclick="addCardToContainer()" class="add-btn1 ppt">Add</button>
+            <button onclick="closePopUp1()" class="close1 ppt">Close</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div style="visibility: hidden;" id="itemForm">
-        <h4>Add New Item</h4>
-    <form>
-        <input type="text" id="itemName"><br>
-        <button id="add" type="button">Add</button>
-        <button id="exit" type="button">Close</button>
-    </form>
 
-    <script src="./index.js"></script>
-</body>
+    <div class="addlist2">
+      <div class="popup1">
+        <div class="text1">Add New Item</div>
+        <input
+          id="myInput1"
+          type="text"
+          class="input1 popup1Input"
+          placeholder="Add New List"
+        />
+        <div class="bflex">
+          <button onclick="addContenttext()" class="add-btn1 ppt">Add</button>
+          <button onclick="closeText()" class="close1 ppt">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
